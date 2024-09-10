@@ -52,9 +52,32 @@ ScrollReveal().reveal('.home-content p, .about-content',{origin: 'right'});
 
 /*==================== typed js ====================*/
 const typed = new Typed('.multiple-text', {
-    strings: ['Frontend Developer', 'Web designer', 'backend Developer'],
+    strings: ['Software Developer', 'Data Scientist', 'Backend Developer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
 });
+
+// About me read buttons
+
+var readMoreButton = document.getElementById('readMore');
+    var readLessButton = document.getElementById('readLess');
+    var beforeRead = document.getElementById('beforeRead');
+    var afterRead = document.getElementById('afterRead');
+
+    readMoreButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        beforeRead.style.display = 'none';
+        afterRead.style.display = 'block';
+        readMoreButton.style.display = 'none';
+        readLessButton.style.display = 'inline';
+    });
+
+    readLessButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        beforeRead.style.display = 'block';
+        afterRead.style.display = 'none';
+        readMoreButton.style.display = 'inline';
+        readLessButton.style.display = 'none';
+    });

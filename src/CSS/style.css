@@ -430,3 +430,8 @@ span{
         text-align: center;
     }
 }
+
+/* Read more and less css */
+.readless{
+    display: none;
+}
