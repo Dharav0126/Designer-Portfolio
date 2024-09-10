@@ -56,35 +56,44 @@
             <h2 class="heading">About <span>Me</span></h2>
             <h3>Software Developer</h3>
             <p id="beforeRead" class="BeforeReadButton">As a dedicated software developer, I bring a blend of technical skills and problem-solving expertise to every project. My experience encompasses designing and implementing efficient backend systems that are both scalable and reliable. With a foundational understanding of data science, I leverage data insights to optimize processes and drive informed decision-making.</p>
-            <p id="afterRead" class="readless"> As a dedicated software developer, I bring a blend of technical skills and problem-solving expertise to every project. My experience encompasses designing and implementing efficient backend systems that are both scalable and reliable. With a foundational understanding of data science, I leverage data insights to optimize processes and drive informed decision-making. I am adept at using various tools and technologies to solve complex challenges and enhance system performance. My approach involves not only writing clean, maintainable code but also ensuring that solutions align with broader business goals. By integrating these elements, I strive to create impactful and innovative software solutions.</p>
-            <a href="#" class="btn" id="readMore">Read More</a>
-            <a href="#" class="btn readless" id="readLess" >Read Less</a>
+            <p id="afterRead" class="readlessAbout"> As a dedicated software developer, I bring a blend of technical skills and problem-solving expertise to every project. My experience encompasses designing and implementing efficient backend systems that are both scalable and reliable. With a foundational understanding of data science, I leverage data insights to optimize processes and drive informed decision-making. I am adept at using various tools and technologies to solve complex challenges and enhance system performance. My approach involves not only writing clean, maintainable code but also ensuring that solutions align with broader business goals. By integrating these elements, I strive to create impactful and innovative software solutions.</p>
+            <a class="btn hoverPointer" id="readMore">Read More</a>
+            <a class="btn hoverPointer readlessAbout" id="readLess" >Read Less</a>
         </div>
      </section>
     <!-- services section design -->
-     <section class="services" id="services">
-        <h2 class="heading">Our <span>Services</span></h2>
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Services</span></h2>
         <div class="services-container">
-            <div class="services-box">
+            <div class="services-box softwareDevelopment">
                 <i class="bx bx-code-alt"></i>
-                <h3>Web Developement</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum error in rerum deleniti tenetur quos quisquam perferendis ullam suscipit. Harum molestias velit totam ducimus fugiat recusandae aliquid quae optio voluptates.</p>
-                <a href="#" class="btn">Read More</a>
+                <h3>Software Development</h3>
+                <p class="readlessService">Providing efficient, scalable software solutions. Specializing in web development, backend systems, and API integration with a focus on delivering clean, maintainable code.</p>
+                <a class="btn hoverPointer readmoreServiceButton">Read More</a>
+                <p class="readmoreService">Offering end-to-end software development solutions tailored to meet client needs. Specializing in building scalable, efficient, and user-friendly applications using modern technologies. Services include web development, backend development, API integration, and ensuring seamless deployment. Committed to delivering high-quality, maintainable code that drives digital transformation and enhances business operations.</p>
+                <a  class="btn hoverPointer readlesserviceButton hidebutton">Other Services</a>
+                <a href="#contact" class="btn hoverPointer request hidebutton">Request This Service</a>
             </div>
-            <div class="services-box">
+            <div class="services-box dataVisualization">
                 <i class="bx bxs-paint"></i>
-                <h3>Graphic Designer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum error in rerum deleniti tenetur quos quisquam perferendis ullam suscipit. Harum molestias velit totam ducimus fugiat recusandae aliquid quae optio voluptates.</p>
-                <a href="#" class="btn">Read More</a>
+                <h3>Data Visualization</h3>
+                <p class="readlessService">Transforming complex data into clear, actionable insights through dynamic charts, graphs, and dashboards. Specializing in creating customized, visually appealing solutions to enhance decision-making and communication.</p>
+                <a class="btn hoverPointer readmoreServiceButton">Read More</a>
+                <p class="readmoreService">Providing insightful data visualization solutions that turn complex datasets into clear, actionable insights. Specializing in creating interactive and dynamic charts, graphs, and dashboards using modern tools. Services include building customized visualizations for reports, presentations, and decision-making, ensuring data is presented in an easily digestible and visually appealing format to enhance clarity and drive strategic decisions.</p>
+                <a  class="btn hoverPointer readlesserviceButton hidebutton">Other Services</a>
+                <a href="#contact" class="btn hoverPointer request hidebutton">Request This Service</a>
             </div>
-            <div class="services-box">
+            <div class="services-box backendDevelopment">
                 <i class="bx bx-bar-chart-alt"></i>
-                <h3>Digital Marketing</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum error in rerum deleniti tenetur quos quisquam perferendis ullam suscipit. Harum molestias velit totam ducimus fugiat recusandae aliquid quae optio voluptates.</p>
-                <a href="#" class="btn">Read More</a>
+                <h3>Backend Development</h3>
+                <p class="readlessService">Building secure, scalable backend systems with expertise in API development, database management, and server-side logic. Ensuring seamless integration with front-end for optimal performance and user experience.</p>
+                <a class="btn hoverPointer readmoreServiceButton">Read More</a>
+                <p class="readmoreService">Providing reliable and scalable backend development solutions to power modern applications. Specializing in server-side logic, API development, database management, and performance optimization. Ensuring secure, robust, and efficient backend systems that integrate seamlessly with front-end components, supporting smooth user experiences and business operations.</p>
+                <a  class="btn hoverPointer readlesserviceButton hidebutton">Other Services</a>
+                <a href="#contact" class="btn hoverPointer request hidebutton">Request This Service</a>
             </div>
         </div>
-     </section>
+    </section>
     <!-- portfolio section design -->
      <section class="portfolio" id="portfolio">
         <h2 class="heading">Latest <span>Project</span></h2>
@@ -144,14 +153,14 @@
         <h2 class="heading">Contact <span>Me</span></h2>
         <form action="#">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+                <input type="text" placeholder="Full Name*" required>
+                <input type="email" placeholder="Email Address*" required>
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
+                <input type="phonenumber" placeholder="Mobile Number (Optional)">
+                <input type="text" placeholder="Email Subject*">
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message*"></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
      </section>

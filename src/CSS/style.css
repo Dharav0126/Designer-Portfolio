@@ -172,13 +172,16 @@ span{
     gap: 2rem;
 }
 .services-container .services-box{
-    flex: 1 1 30rem;
+    flex: 1 1 33rem;
     background-color: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
     border: .2rem solid var(--bg-color);
     transition: .5s ease;
+}
+.services-box{
+    height: 42em;
 }
 .services-container .services-box:hover{
     border-color: var(--main-color);
@@ -431,7 +434,24 @@ span{
     }
 }
 
-/* Read more and less css */
-.readless{
+/* Read more and less about css */
+.readlessAbout{
+    display: none;
+}
+
+/* Read more and readless service css */
+.readmoreService{
+    display: none;
+}
+
+.readlesserviceButton{
+    display: none;
+}
+
+.hoverPointer:hover{
+    cursor: pointer;
+}
+
+.hidebutton{
     display: none;
 }

@@ -62,22 +62,72 @@ const typed = new Typed('.multiple-text', {
 // About me read buttons
 
 var readMoreButton = document.getElementById('readMore');
-    var readLessButton = document.getElementById('readLess');
-    var beforeRead = document.getElementById('beforeRead');
-    var afterRead = document.getElementById('afterRead');
+var readLessButton = document.getElementById('readLess');
+var beforeRead = document.getElementById('beforeRead');
+var afterRead = document.getElementById('afterRead');
 
-    readMoreButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        beforeRead.style.display = 'none';
-        afterRead.style.display = 'block';
-        readMoreButton.style.display = 'none';
-        readLessButton.style.display = 'inline';
-    });
+readMoreButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    beforeRead.style.display = 'none';
+    afterRead.style.display = 'block';
+    readMoreButton.style.display = 'none';
+    readLessButton.style.display = 'inline';
+});
 
-    readLessButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        beforeRead.style.display = 'block';
-        afterRead.style.display = 'none';
-        readMoreButton.style.display = 'inline';
-        readLessButton.style.display = 'none';
+readLessButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    beforeRead.style.display = 'block';
+    afterRead.style.display = 'none';
+    readMoreButton.style.display = 'inline';
+    readLessButton.style.display = 'none';
+});
+
+// Services readmore and readless buttons
+document.querySelectorAll('.readmoreServiceButton').forEach((button) => {
+    button.addEventListener('click', function () {
+      // Find the parent service box and expand it
+      const serviceBox = this.closest('.services-box');
+  
+      // Hide all service boxes except the one that was clicked
+      document.querySelectorAll('.services-box').forEach((box) => {
+        if (box !== serviceBox) {
+          box.style.display = 'none';
+        } else {
+          box.classList.add('expanded');
+        }
+      });
+  
+      // Show the read-more content and buttons
+      serviceBox.querySelector('.readlessService').style.display = 'none';
+      serviceBox.querySelector('.readmoreService').style.display = 'block';
+      serviceBox.querySelector('.readlesserviceButton').style.display = 'inline-block';
+      serviceBox.querySelector('.request').style.display = 'inline-block';
+  
+      // Hide the "Read More" button
+      this.style.display = 'none';
     });
+  });
+  
+  // Event listener for "Other Services" button
+  document.querySelectorAll('.readlesserviceButton').forEach((button) => {
+    button.addEventListener('click', function () {
+      // Find the parent service box and collapse it
+      const serviceBox = this.closest('.services-box');
+      serviceBox.classList.remove('expanded');
+  
+      // Show all service boxes again
+      document.querySelectorAll('.services-box').forEach((box) => {
+        box.style.display = 'block';
+      });
+  
+      // Show the read-less content and hide the expanded content
+      serviceBox.querySelector('.readlessService').style.display = 'block';
+      serviceBox.querySelector('.readmoreService').style.display = 'none';
+      serviceBox.querySelector('.readlesserviceButton').style.display = 'none';
+      serviceBox.querySelector('.request').style.display = 'none';
+  
+      // Show the "Read More" button again
+      serviceBox.querySelector('.readmoreServiceButton').style.display = 'inline-block';
+    });
+  });
+  
