@@ -29,7 +29,7 @@ app.post('/submit-form', (req, res) => {
         return res.status(400).json({ success: false, message: 'Missing required fields' });
     }
     console.log(`Form details: Name: ${name}, Email: ${email}, Number: ${number}, Subject: ${subject}, Message: ${textarea}`);
-    res.json({ success: true });
+    res.redirect('/');
 });
 
 // Start the server
