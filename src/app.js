@@ -17,7 +17,7 @@ app.use(express.json());
 app.use('/CSS', express.static(path.join(__dirname, 'CSS')));
 app.use('/Script', express.static(path.join(__dirname, 'Script')));
 app.use('/Images', express.static(path.join(__dirname, 'Images')));
-
+app.use('/Resume', express.static(path.join(__dirname, 'Resume')));
 // Serve the main HTML file
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));

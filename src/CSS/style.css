@@ -464,3 +464,13 @@ font-size: 2em;
 display: none;
 text-align: center;
 }
+
+.email{
+    text-align: center;
+    font-size: 3em;
+}
+
+.thanks{
+    text-align: center;
+    font-size: 2em;
+}
