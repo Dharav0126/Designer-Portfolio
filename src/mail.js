@@ -1,29 +1,23 @@
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 
-// Create a transporter
-let transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const sendMail = async (formData) => {
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS, // Use an App Password
+        },
+    });
 
-// Send mail function
-const sendMail = (formData) => {
-  let mailOptions = {
-    from: formData.email, // Sender's email
-    to: 'dharav2626@gmail.com', // Your email
-    subject: 'Portfolio Contact Form Message',
-    text: `You received a message from ${formData.name}:\n\n${formData.message}`,
-  };
+    let mailOptions = {
+        from: formData.email, // Sender's email
+        to: process.env.EMAIL_TO, // Your email
+        subject: `Contact Form: ${formData.subject}`,
+        text: `You received a message from ${formData.name} (${formData.email}, ${formData.number}):\n\n${formData.textarea}`,
+    };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
+    await transporter.sendMail(mailOptions);
 };
+
+module.exports = sendMail;
