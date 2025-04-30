@@ -131,5 +131,43 @@ document.querySelectorAll('.readmoreServiceButton').forEach((button) => {
     });
   });
 
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        number: formData.get('number'),
+        subject: formData.get('subject'),
+        textarea: formData.get('textarea')
+    };
+
+    try {
+        const response = await fetch('/submit-form', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            // Replace the form with the thank you HTML message
+            document.querySelector('.contact form').innerHTML = `
+                <div class="thank-you-message" style="color: green; font-size: 1.2rem;">
+                    <p>✅ Thank you for contacting me!</p>
+                    <p>I will reach out to you within 48 business hours.</p>
+                </div>
+            `;
+        } else {
+            alert(result.message || 'Something went wrong.');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('Failed to send message.');
+    }
+});
   

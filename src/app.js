@@ -1,10 +1,16 @@
 const express = require('express');
 const path = require('path');
 const dotenv = require("dotenv");
-const sendMail = require('./mail'); // Import mail handler
-
+const cors = require('cors');
+const bodyParser = require("body-parser");
+const contactRoutes = require("./routes/contactRoutes");
 // Initializing the express app
 const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // Loading environment variables
 dotenv.config();
@@ -23,25 +29,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Handle form submission and send email
-app.post('/submit-form', async (req, res) => {
-    const { name, email, number, subject, textarea } = req.body;
-    
-    if (!name || !email || !subject || !textarea) {
-        return res.status(400).json({ success: false, message: 'Missing required fields' });
-    }
+app.use('/', contactRoutes);
 
-    try {
-        // Call sendMail function
-        await sendMail({ name, email, number, subject, textarea });
-        console.log(`Form details: Name: ${name}, Email: ${email}, Number: ${number}, Subject: ${subject}, Message: ${textarea}`);
-        
-        res.json({ success: true, message: "Email sent successfully!" });
-    } catch (error) {
-        console.error("Error sending email:", error);
-        res.status(500).json({ success: false, message: "Error sending email" });
-    }
-});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
