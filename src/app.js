@@ -30,6 +30,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/', contactRoutes);
+app.get('/send-mail', (req,res)=>{
+    console.log("Hi");
+    res.status(200).json("Hi")
+});
 
 
 // Start the server
