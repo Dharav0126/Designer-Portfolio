@@ -77,4 +77,4 @@ For collaborations or questions:
 
 📧 Email: dharav2626@gmail.com
 
-🌐 LinkedIn: linkedin.com/in/dharavpatel2608
+🌐 LinkedIn: linkedin.com/in/dharavhpatel
