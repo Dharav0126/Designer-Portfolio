@@ -33,7 +33,7 @@ Visit the site: [https://designer-portfolio.onrender.com](https://designer-portf
 │ ├── routes/
 │ │ └── contactRoutes.js # Email sending logic
 │ ├── index.html # Main portfolio HTML
-│ └── server.js # Express server entry point
+│ └── app.js # Express server entry point
 ├── .env # Environment variables (not committed)
 ├── .gitignore
 ├── package.json
@@ -67,8 +67,9 @@ EMAIL_PASS=your-app-password
 ```bash
 
 node src/server.js
-Then open http://localhost:3000 in your browser.
 ```
+Then open http://localhost:3000 in your browser.
+
 
 
 📫 Contact
